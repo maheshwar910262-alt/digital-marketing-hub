@@ -1,5 +1,6 @@
 import "./Backlinks.css";
 import { useEffect, useState } from "react";
+import backlinksBanner from "../assets/backlinks-banner.png";
 
 const backlinkSites = [
   {
@@ -426,14 +427,8 @@ function Backlinks() {
       {/* HEADER */}
 
       <header className="backlinks-header">
-
-        <h1>🔗 Backlink Websites</h1>
-
-        <p>
-          Submit your website and build backlinks
-        </p>
-
-      </header>
+  <div className="backlinks-banner"></div>
+</header>
 
 
       {/* INFO */}

@@ -79,7 +79,7 @@ const aiTools = [
     category: "AI Voice",
     description:
       "Open-source local AI voice studio for voice cloning, text-to-speech and voice-powered applications.",
-    link: "https://voicebox.sh/download",
+    link: "https://voicebox.sh/",
     pdfLink: "",
     videoLink: "",
     youtubeLink: "",
