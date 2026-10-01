@@ -10,7 +10,10 @@ import AITools from "./pages/AITools";
 import LeadGeneration from "./pages/LeadGeneration";
 import TechnicalSEO from "./pages/TechnicalSEO";
 import LeadExcelCleaner from "./pages/LeadExcelCleaner";
+
 import MetaAds from "./pages/MetaAds";
+import LocalSEO from "./pages/LocalSEO";
+import EmailMarketing from "./pages/EmailMarketing";
 import {
   Routes,
   Route,
@@ -437,65 +440,13 @@ function Home() {
 
       <section className="hero">
 
-        <div className="hero-content">
+  <img
+    src="/hero.png"
+    alt="Digital Marketing Learning Hub"
+    className="hero-banner"
+  />
 
-          <p className="small-title">
-            LEARN • PRACTICE • IMPLEMENT • GROW
-          </p>
-
-
-          <h1>
-
-            Your Digital Marketing Journey
-
-            <span>
-              {" "}Starts Here
-            </span>
-
-          </h1>
-
-
-          <p>
-            Step-by-step guides, PDFs, videos and
-            real websites — everything in one place.
-          </p>
-
-
-          <div className="hero-buttons">
-
-            <span>
-              📖 Learn Skills
-            </span>
-
-            <span>
-              ▶ Watch Videos
-            </span>
-
-            <span>
-              🔗 Real Websites
-            </span>
-
-            <span>
-              📊 Real Results
-            </span>
-
-          </div>
-
-        </div>
-
-
-        <div className="hero-image">
-
-          💻
-
-          <strong>
-            Learn • Apply • Grow
-          </strong>
-
-        </div>
-
-      </section>
-
+</section>
 
       {/* =================================================
           TOPICS
@@ -701,7 +652,8 @@ function App() {
   element={<LeadExcelCleaner />}
 />
 <Route path="/meta-ads" element={<MetaAds />} />
-
+<Route path="/local-seo" element={<LocalSEO />} />
+<Route path="/email-marketing" element={<EmailMarketing />} />
       {/* OTHER PAGES */}
 
       <Route
