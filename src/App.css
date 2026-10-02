@@ -710,3 +710,15 @@ footer small {
   }
 
 }
+.hero {
+  width: 100%;
+  margin: 0 auto 35px;
+  padding: 0;
+}
+
+.hero-banner {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 14px;
+}

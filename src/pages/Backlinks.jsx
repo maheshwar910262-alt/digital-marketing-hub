@@ -8,7 +8,7 @@ const backlinkSites = [
     url: "https://www.admyurl.com",
   },
   {
-    name: "Somuch",
+    name: "SoMuch",
     url: "https://www.somuch.com",
   },
   {
@@ -20,7 +20,7 @@ const backlinkSites = [
     url: "https://submitx.com/",
   },
   {
-    name: "Product Selectoren",
+    name: "Product Selector",
     url: "https://www.productselectoren.com",
   },
   {
@@ -32,10 +32,6 @@ const backlinkSites = [
     url: "https://www.submissionwebdirectory.com/",
   },
   {
-    name: "MoreFunz",
-    url: "https://morefunz.com",
-  },
-  {
     name: "TagsHub",
     url: "https://tagshub.com",
   },
@@ -44,16 +40,8 @@ const backlinkSites = [
     url: "https://www.usawebsitesdirectory.com",
   },
   {
-    name: "ProLink Directory",
-    url: "https://www.prolinkdirectory.com",
-  },
-  {
     name: "QuickLinks",
     url: "https://quicklinks.net/",
-  },
-  {
-    name: "Info Listings",
-    url: "https://info-listings.com/",
   },
   {
     name: "GainWeb",
@@ -64,36 +52,16 @@ const backlinkSites = [
     url: "https://www.ukinternetdirectory.net",
   },
   {
-    name: "Free PR Web Directory",
-    url: "https://www.freeprwebdirectory.com/",
-  },
-  {
     name: "Promote Business Directory",
     url: "https://www.promotebusinessdirectory.com",
-  },
-  {
-    name: "Hit Web Directory",
-    url: "https://www.hitwebdirectory.com/",
   },
   {
     name: "All States USA Directory",
     url: "https://www.allstatesusadirectory.com",
   },
   {
-    name: "Free Top Rank Directory",
-    url: "https://www.freetoprankdirectory.com",
-  },
-  {
-    name: "Quality Internet Directory",
-    url: "https://www.qualityinternetdirectory.com",
-  },
-  {
     name: "Travel Tourism Directory",
     url: "https://www.traveltourismdirectory.net",
-  },
-  {
-    name: "9Sites",
-    url: "https://www.9sites.net",
   },
   {
     name: "Viesearch Submit",
@@ -110,18 +78,6 @@ const backlinkSites = [
   {
     name: "Marketing Web Directory",
     url: "https://www.marketingwebdirectory.com",
-  },
-  {
-    name: "Information Crawler",
-    url: "https://www.informationcrawler.com/submit.php",
-  },
-  {
-    name: "Hit Web Directory Submit",
-    url: "https://www.hitwebdirectory.com/submit.php",
-  },
-  {
-    name: "Free Internet Web Directory",
-    url: "https://www.freeinternetwebdirectory.com",
   },
   {
     name: "Submit.biz",
@@ -152,7 +108,7 @@ const backlinkSites = [
     url: "https://activdirectory.net",
   },
   {
-    name: "Caida",
+    name: "CAIDA",
     url: "https://caida.eu",
   },
   {
@@ -176,7 +132,7 @@ const backlinkSites = [
     url: "https://smartseolink.org",
   },
   {
-    name: "Best Buy Directory",
+    name: "BestBuyDir",
     url: "https://bestbuydir.com",
   },
   {
@@ -184,16 +140,12 @@ const backlinkSites = [
     url: "https://dentons.net/advertise/create/basic",
   },
   {
-    name: "Made With VueJS",
+    name: "Made With Vue JS",
     url: "https://madewithvuejs.com",
   },
   {
-    name: "Craigslist Directory Net",
+    name: "Craigslist Directory",
     url: "https://www.craigslistdirectory.net/",
-  },
-  {
-    name: "Somuch",
-    url: "https://somuch.com/",
   },
   {
     name: "Free Web Submission",
@@ -206,10 +158,6 @@ const backlinkSites = [
   {
     name: "Expansion Directory",
     url: "https://www.expansiondirectory.com",
-  },
-  {
-    name: "AdmyURL",
-    url: "https://admyurl.com/",
   },
   {
     name: "WebSquash",
@@ -268,7 +216,7 @@ const backlinkSites = [
     url: "https://www.fire-directory.com",
   },
   {
-    name: "Bluebook Directory",
+    name: "BlueBook Directory",
     url: "https://www.bluebook-directory.com",
   },
   {
@@ -278,10 +226,6 @@ const backlinkSites = [
   {
     name: "SEO Optimization Directory",
     url: "https://seooptimizationdirectory.com",
-  },
-  {
-    name: "Directory6",
-    url: "https://directory6.org",
   },
   {
     name: "European Navigator",
@@ -300,16 +244,24 @@ const backlinkSites = [
     url: "https://ebay-dir.com",
   },
   {
-    name: "A Web List",
-    url: "https://aweblist.org",
-  },
-  {
     name: "Jayde",
     url: "https://www.jayde.com",
   },
   {
-    name: "Just Directory",
-    url: "https://justdirectory.org",
+    name: "The SEO Backlink",
+    url: "https://www.theseobacklink.com",
+  },
+  {
+    name: "MediaFire Direct Link",
+    url: "https://www.mediafiredirectlink.com",
+  },
+  {
+    name: "LinkCentre",
+    url: "https://www.linkcentre.com",
+  },
+  {
+    name: "Brown Edge Directory",
+    url: "https://brownedgedirectory.com",
   },
 ];
 const DONE_TIME = 24 * 60 * 60 * 1000;
