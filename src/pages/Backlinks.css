@@ -1,256 +1,514 @@
+/* =========================================
+   BACKLINKS PAGE
+========================================= */
+
 .backlinks-page {
   min-height: 100vh;
-  background: #f5f7fb;
+  background: #f8fafc;
   padding-bottom: 60px;
 }
 
 
-/* HEADER */
+/* =========================================
+   HEADER / BANNER IMAGE
+========================================= */
 
 .backlinks-header {
-  background: linear-gradient(
-    135deg,
-    #2563eb,
-    #7c3aed
-  );
-
-  color: white;
-
-  text-align: center;
-
-  padding: 60px 20px;
+  width: 100%;
+  margin: 0 auto 30px;
+  padding: 0;
+  overflow: hidden;
+  background: #ffffff;
+  border-radius: 0 0 12px 12px;
 }
 
-.backlinks-header h1 {
-  font-size: 42px;
-  margin-bottom: 10px;
+.backlinks-banner {
+  display: block;
+  width: 100%;
+  height: auto;
+  min-height: 0;
+
+  background-image: url("../assets/backlinks-banner.png");
+  background-size: 100% auto;
+  background-position: center top;
+  background-repeat: no-repeat;
+
+  aspect-ratio: 16 / 6;
 }
 
-.backlinks-header p {
-  font-size: 18px;
-}
 
-
-/* INFO */
+/* =========================================
+   INFO SECTION
+========================================= */
 
 .backlink-info {
-  max-width: 1100px;
+  max-width: 1180px;
+  margin: 0 auto 25px;
+  padding: 25px 30px;
 
-  margin: 40px auto 25px;
+  background: #ffffff;
 
-  padding: 0 20px;
+  border: 1px solid #e2e8f0;
+  border-left: 4px solid #2563eb;
+  border-radius: 10px;
+
+  box-sizing: border-box;
 }
 
 .backlink-info h2 {
-  font-size: 30px;
-  margin-bottom: 10px;
+  margin: 0 0 8px;
+
+  color: #0f172a;
+  font-size: 25px;
+  line-height: 1.3;
 }
 
 .backlink-info p {
-  color: #666;
+  margin: 0;
+
+  color: #64748b;
+  font-size: 14px;
+  line-height: 1.6;
 }
 
 
-/* LIST */
+/* =========================================
+   WEBSITE LIST
+========================================= */
 
 .backlink-list {
-  max-width: 1100px;
-
-  margin: auto;
-
-  padding: 0 20px;
+  max-width: 1180px;
+  margin: 0 auto;
 
   display: flex;
-
   flex-direction: column;
+  gap: 12px;
 
-  gap: 18px;
+  box-sizing: border-box;
 }
 
 
-/* CARD */
+/* =========================================
+   BACKLINK CARD
+========================================= */
 
 .backlink-card {
-  background: white;
-
-  border-radius: 14px;
-
-  padding: 20px;
+  width: 100%;
+  box-sizing: border-box;
 
   display: flex;
-
   align-items: center;
+  gap: 18px;
 
-  gap: 20px;
+  padding: 17px 20px;
 
-  box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+  background: #ffffff;
 
-  transition: 0.3s;
+  border: 1px solid #e2e8f0;
+  border-left: 3px solid #3b82f6;
+  border-radius: 9px;
+
+  box-shadow: 0 3px 10px rgba(15, 23, 42, 0.035);
+
+  transition: border-color 0.2s ease;
 }
 
 .backlink-card:hover {
-  transform: translateY(-3px);
-
-  box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+  border-color: #bfdbfe;
 }
 
 
-/* NUMBER */
+/* =========================================
+   COMPLETED CARD
+========================================= */
+
+.completed-card {
+  border-left-color: #16a34a;
+  background: #f8fff9;
+}
+
+
+/* =========================================
+   NUMBER
+========================================= */
 
 .site-number {
-  width: 45px;
+  flex-shrink: 0;
 
-  height: 45px;
-
-  border-radius: 50%;
-
-  background: #2563eb;
-
-  color: white;
+  width: 38px;
+  height: 38px;
 
   display: flex;
-
   align-items: center;
-
   justify-content: center;
 
-  font-weight: bold;
+  background: #eff6ff;
 
-  font-size: 18px;
+  border: 1px solid #bfdbfe;
+  border-radius: 7px;
+
+  color: #2563eb;
+
+  font-size: 13px;
+  font-weight: 700;
 }
 
 
-/* INFO */
+/* =========================================
+   WEBSITE INFORMATION
+========================================= */
 
 .site-info {
   flex: 1;
+  min-width: 0;
 }
 
 .site-info h3 {
-  margin: 0 0 6px;
+  margin: 0 0 5px;
 
-  font-size: 20px;
+  color: #0f172a;
+
+  font-size: 16px;
+  line-height: 1.4;
 }
 
 .site-info p {
   margin: 0;
 
-  color: #777;
+  color: #64748b;
 
-  word-break: break-all;
-}
+  font-size: 13px;
+  line-height: 1.5;
 
-
-/* BUTTONS */
-
-.site-actions {
-  display: flex;
-
-  gap: 10px;
-}
-
-
-.copy-btn,
-.open-btn {
-  border: none;
-
-  padding: 10px 16px;
-
-  border-radius: 8px;
-
-  cursor: pointer;
-
-  font-size: 14px;
-
-  text-decoration: none;
-}
-
-.copy-btn {
-  background: #e5e7eb;
-
-  color: #111827;
-}
-
-.open-btn {
-  background: #2563eb;
-
-  color: white;
-}
-
-
-/* MOBILE */
-
-@media (max-width: 700px) {
-
-  .backlink-card {
-    flex-direction: column;
-
-    align-items: flex-start;
-  }
-
-  .site-actions {
-    width: 100%;
-  }
-
-  .copy-btn,
-  .open-btn {
-    flex: 1;
-
-    text-align: center;
-  }
-
-}
-.done-btn {
-  border: none;
-  padding: 10px 16px;
-  border-radius: 8px;
-  cursor: pointer;
-  background: #16a34a;
-  color: white;
-  font-weight: 600;
-}
-
-.done-btn:hover {
-  background: #15803d;
-}
-
-.completed-btn {
-  border: none;
-  padding: 10px 16px;
-  border-radius: 8px;
-  background: #dcfce7;
-  color: #15803d;
-  font-weight: 700;
-  cursor: not-allowed;
-}
-
-.completed-card {
-  border-left: 5px solid #16a34a;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .expiry-time {
   display: inline-block;
-  margin-top: 8px;
+
+  margin-top: 7px;
+
   color: #15803d;
-  font-size: 13px;
+
+  font-size: 12px;
   font-weight: 600;
 }
-.backlinks-header {
-  width: 100%;
-  height: 500px;
-  padding: 0;
-  margin: 0;
 
-  background-image: url("../assets/backlinks-banner.png");
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
 
-  position: relative;
-  overflow: hidden;
+/* =========================================
+   BUTTON AREA
+========================================= */
+
+.site-actions {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+
+  flex-shrink: 0;
 }
 
-.backlinks-banner {
-  width: 100%;
-  height: 100%;
+
+/* Common button */
+
+.site-actions button,
+.site-actions a {
+  min-width: 75px;
+  box-sizing: border-box;
+
+  padding: 8px 11px;
+
+  border-radius: 6px;
+
+  font-size: 12px;
+  font-weight: 600;
+
+  text-align: center;
+  text-decoration: none;
+
+  cursor: pointer;
+}
+
+
+/* =========================================
+   COPY BUTTON
+========================================= */
+
+.copy-btn {
+  background: #f8fafc;
+  color: #475569;
+
+  border: 1px solid #cbd5e1;
+}
+
+.copy-btn:hover {
+  background: #f1f5f9;
+}
+
+
+/* =========================================
+   OPEN BUTTON
+========================================= */
+
+.open-btn {
+  background: #eff6ff;
+  color: #2563eb;
+
+  border: 1px solid #bfdbfe;
+}
+
+.open-btn:hover {
+  background: #dbeafe;
+}
+
+
+/* =========================================
+   DONE BUTTON
+========================================= */
+
+.done-btn {
+  background: #2563eb;
+  color: #ffffff;
+
+  border: 1px solid #2563eb;
+}
+
+.done-btn:hover {
+  background: #1d4ed8;
+}
+
+
+/* =========================================
+   COMPLETED BUTTON
+========================================= */
+
+.completed-btn {
+  background: #dcfce7;
+  color: #15803d;
+
+  border: 1px solid #bbf7d0;
+
+  cursor: not-allowed;
+}
+
+
+/* =========================================
+   MOBILE VIEW
+========================================= */
+
+@media (max-width: 700px) {
+
+  .backlinks-page {
+    padding: 0 12px 40px;
+  }
+
+
+  /* Banner full width */
+
+  .backlinks-header {
+    width: calc(100% + 24px);
+
+    margin-left: -12px;
+    margin-right: -12px;
+
+    margin-bottom: 20px;
+
+    border-radius: 0;
+  }
+
+  .backlinks-banner {
+    width: 100%;
+    height: auto;
+
+    aspect-ratio: 16 / 6;
+
+    background-size: 100% auto;
+    background-position: center top;
+  }
+
+
+  /* Info */
+
+  .backlink-info {
+    width: 100%;
+
+    padding: 20px;
+
+    margin-bottom: 18px;
+  }
+
+  .backlink-info h2 {
+    font-size: 21px;
+  }
+
+  .backlink-info p {
+    font-size: 13px;
+  }
+
+
+  /* Card */
+
+  .backlink-card {
+    display: grid;
+
+    grid-template-columns: 38px 1fr;
+
+    gap: 12px;
+
+    padding: 15px;
+  }
+
+
+  /* Website URL */
+
+  .site-info {
+    min-width: 0;
+  }
+
+  .site-info h3 {
+    font-size: 15px;
+  }
+
+  .site-info p {
+    white-space: normal;
+
+    word-break: break-word;
+
+    overflow: visible;
+
+    line-height: 1.5;
+
+    font-size: 12px;
+  }
+
+
+  /* Buttons */
+
+  .site-actions {
+    grid-column: 1 / -1;
+
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 7px;
+  }
+
+  .site-actions button,
+  .site-actions a {
+    width: 100%;
+    min-width: 0;
+
+    padding: 9px 6px;
+
+    box-sizing: border-box;
+  }
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 450px) {
+
+  .backlinks-page {
+    padding: 0 10px 35px;
+  }
+
+
+  .backlinks-header {
+    width: calc(100% + 20px);
+
+    margin-left: -10px;
+    margin-right: -10px;
+  }
+
+
+  .backlink-card {
+    padding: 13px;
+  }
+
+
+  .site-number {
+    width: 36px;
+    height: 36px;
+  }
+
+
+  .site-info h3 {
+    font-size: 14px;
+  }
+
+
+  .site-info p {
+    font-size: 11px;
+  }
+
+
+  /* Small mobile buttons one below another */
+
+  .site-actions {
+    grid-template-columns: 1fr;
+  }
+
+  .site-actions button,
+  .site-actions a {
+    width: 100%;
+    padding: 9px;
+  }
+}
+@media (max-width: 700px) {
+  .backlinks-header {
+    width: 100%;
+    height: auto;
+    padding: 0;
+    margin: 0 0 20px;
+    overflow: hidden;
+    border-radius: 0;
+  }
+
+  .backlinks-banner {
+    display: block;
+    width: 100%;
+    height: auto;
+    min-height: 0;
+    aspect-ratio: 16 / 6;
+    object-fit: contain;
+    object-position: center;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+}
+@media (max-width: 700px) {
+  .backlinks-header {
+    width: 100%;
+    margin: 0 0 20px;
+    padding: 0;
+    overflow: hidden;
+  }
+
+  .backlinks-banner {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    object-fit: contain;
+    object-position: center;
+  }
+}
+
+@media (max-width: 450px) {
+  .backlinks-header {
+    margin-bottom: 15px;
+  }
+
+  .backlinks-banner {
+    width: 100%;
+    height: auto;
+  }
 }

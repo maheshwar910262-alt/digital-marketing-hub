@@ -14,7 +14,8 @@ import LeadExcelCleaner from "./pages/LeadExcelCleaner";
 import MetaAds from "./pages/MetaAds";
 import LocalSEO from "./pages/LocalSEO";
 import EmailMarketing from "./pages/EmailMarketing";
-import heroImage from "./assets/hero.png";
+import heroImage from "./assets/homepage.png";
+
 import {
   Routes,
   Route,
@@ -439,10 +440,12 @@ function Home() {
           HERO
       ================================================= */}
 
-      <section className="hero">
+   
+
+  <section className="hero">
   <img
     src={heroImage}
-    alt="Digital Marketing Learning Hub"
+    alt="Digital Marketing Journey"
     className="hero-banner"
   />
 </section>
