@@ -15,7 +15,7 @@ import MetaAds from "./pages/MetaAds";
 import LocalSEO from "./pages/LocalSEO";
 import EmailMarketing from "./pages/EmailMarketing";
 import heroImage from "./assets/homepage.png";
-
+import WhatsAppMarketing from "./pages/WhatsAppMarketing";
 import {
   Routes,
   Route,
@@ -105,6 +105,7 @@ const topics = [
     youtubeLink: "",
     visitLink: "/email-marketing",
   },
+  
 
   {
     icon: "🤖",
@@ -226,7 +227,16 @@ const topics = [
     youtubeLink: "",
     visitLink: "/landing-pages",
   },
-
+{
+    icon: "💬",
+    title: "WhatsApp Marketing",
+    description:
+      "Learn WhatsApp Business marketing, contact filtering, message campaigns, customer communication and safe campaign management.",
+    pdfLink: "",
+    videoLink: "",
+    youtubeLink: "",
+    visitLink: "/whatsapp-marketing"
+  },
   {
     icon: "🎯",
     title: "Lead Generation",
@@ -630,7 +640,10 @@ function App() {
         path="/backlinks"
         element={<Backlinks />}
       />
-
+<Route
+  path="/whatsapp-marketing"
+  element={<WhatsAppMarketing />}
+/>
       <Route
         path="/social-media"
         element={<SocialMedia />}

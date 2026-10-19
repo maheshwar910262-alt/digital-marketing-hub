@@ -1,0 +1,504 @@
+/* ================================
+   WHATSAPP MARKETING PAGE
+================================ */
+
+.whatsapp-page {
+  min-height: 100vh;
+  background: #f8fafc;
+  padding: 30px 6%;
+  color: #1e293b;
+}
+
+
+/* ================================
+   HOME BUTTON
+================================ */
+
+.whatsapp-page .back-home {
+  display: inline-block;
+  margin-bottom: 25px;
+  padding: 8px 14px;
+  background: #eff6ff;
+  color: #2563eb;
+  border: 1px solid #bfdbfe;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.whatsapp-page .back-home:hover {
+  background: #dbeafe;
+}
+
+
+/* ================================
+   HEADER
+================================ */
+
+.whatsapp-header {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-left: 4px solid #2563eb;
+  border-radius: 10px;
+  padding: 35px;
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+.whatsapp-icon {
+  font-size: 42px;
+  margin-bottom: 10px;
+}
+
+.whatsapp-header h1 {
+  margin: 0 0 10px;
+  color: #1d4ed8;
+  font-size: 32px;
+}
+
+.whatsapp-header p {
+  max-width: 700px;
+  margin: auto;
+  color: #64748b;
+  line-height: 1.7;
+}
+
+
+/* ================================
+   CARD
+================================ */
+
+.whatsapp-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 25px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
+}
+
+.whatsapp-card h2 {
+  margin: 0 0 15px;
+  color: #1e40af;
+  font-size: 20px;
+}
+
+.whatsapp-card p {
+  color: #64748b;
+  line-height: 1.6;
+}
+
+
+/* ================================
+   CONNECTION
+================================ */
+
+.connection-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 18px;
+}
+
+.connection-box strong {
+  display: block;
+  margin-bottom: 7px;
+}
+
+.connection-box p {
+  margin: 0 0 7px;
+}
+
+.connected {
+  color: #16a34a;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.logout-btn {
+  background: #ffffff;
+  color: #dc2626;
+  border: 1px solid #fecaca;
+  padding: 9px 18px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.logout-btn:hover {
+  background: #fef2f2;
+}
+
+
+/* ================================
+   MOBILE INPUT
+================================ */
+
+.mobile-input,
+.message-box {
+  width: 100%;
+  min-height: 140px;
+  box-sizing: border-box;
+  padding: 14px;
+  border: 1px solid #cbd5e1;
+  border-radius: 7px;
+  resize: vertical;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  outline: none;
+}
+
+.mobile-input:focus,
+.message-box:focus,
+.message-input:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 2px #dbeafe;
+}
+
+.message-input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 12px 14px;
+  margin-bottom: 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 7px;
+  outline: none;
+  font-size: 14px;
+}
+
+
+/* ================================
+   BUTTONS
+================================ */
+
+.filter-actions,
+.message-actions,
+.campaign-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 15px;
+}
+
+.primary-btn,
+.secondary-btn,
+.send-btn,
+.pause-btn,
+.stop-btn {
+  padding: 10px 18px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.primary-btn {
+  background: #2563eb;
+  color: #ffffff;
+  border: 1px solid #2563eb;
+}
+
+.primary-btn:hover {
+  background: #1d4ed8;
+}
+
+.secondary-btn {
+  background: #ffffff;
+  color: #2563eb;
+  border: 1px solid #93c5fd;
+}
+
+.secondary-btn:hover {
+  background: #eff6ff;
+}
+
+
+/* ================================
+   FILTER SUMMARY
+================================ */
+
+.filter-summary,
+.campaign-status {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.filter-summary div,
+.campaign-status div {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 7px;
+  padding: 15px;
+  text-align: center;
+}
+
+.filter-summary strong,
+.campaign-status strong {
+  display: block;
+  color: #2563eb;
+  font-size: 22px;
+  margin-bottom: 5px;
+}
+
+.filter-summary span,
+.campaign-status span {
+  color: #64748b;
+  font-size: 13px;
+}
+
+
+/* ================================
+   MEMBER SELECTION
+================================ */
+
+.select-all {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 14px;
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+  border-radius: 7px;
+  margin-bottom: 12px;
+}
+
+.select-all strong {
+  color: #2563eb;
+  font-size: 14px;
+}
+
+.member-list {
+  display: grid;
+  gap: 8px;
+}
+
+.member-list label,
+.safety-card label,
+.sms-card label {
+  display: block;
+  padding: 11px 12px;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  cursor: pointer;
+  color: #475569;
+}
+
+.member-list label:hover,
+.safety-card label:hover,
+.sms-card label:hover {
+  background: #f8fafc;
+}
+
+input[type="checkbox"] {
+  margin-right: 9px;
+  accent-color: #2563eb;
+}
+
+
+/* ================================
+   SAFETY
+================================ */
+
+.safety-card {
+  border-left: 4px solid #f59e0b;
+}
+
+.safety-card label {
+  margin-bottom: 8px;
+}
+
+.send-warning {
+  margin-top: 15px;
+  padding: 12px;
+  background: #fffbeb;
+  border: 1px solid #fde68a;
+  border-radius: 6px;
+  color: #92400e;
+  font-size: 13px;
+}
+
+.send-btn {
+  margin-top: 15px;
+  background: #16a34a;
+  color: #ffffff;
+  border: 1px solid #16a34a;
+}
+
+.send-btn:hover {
+  background: #15803d;
+}
+
+
+/* ================================
+   CAMPAIGN ACTIONS
+================================ */
+
+.pause-btn {
+  background: #ffffff;
+  color: #d97706;
+  border: 1px solid #fcd34d;
+}
+
+.pause-btn:hover {
+  background: #fffbeb;
+}
+
+.stop-btn {
+  background: #ffffff;
+  color: #dc2626;
+  border: 1px solid #fecaca;
+}
+
+.stop-btn:hover {
+  background: #fef2f2;
+}
+
+
+/* ================================
+   SMS FALLBACK
+================================ */
+
+.sms-card {
+  border-left: 4px solid #64748b;
+}
+
+.sms-count {
+  display: inline-block;
+  padding: 10px 14px;
+  margin: 5px 0 15px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  color: #475569;
+}
+
+
+/* ================================
+   WORKFLOW
+================================ */
+
+.workflow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.workflow span {
+  padding: 10px 14px;
+  background: #eff6ff;
+  color: #1d4ed8;
+  border: 1px solid #bfdbfe;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.workflow b {
+  color: #94a3b8;
+}
+
+
+/* ================================
+   MOBILE
+================================ */
+
+@media (max-width: 700px) {
+
+  .whatsapp-page {
+    padding: 20px 15px;
+  }
+
+  .whatsapp-header {
+    padding: 25px 18px;
+  }
+
+  .whatsapp-header h1 {
+    font-size: 26px;
+  }
+
+  .whatsapp-card {
+    padding: 18px;
+  }
+
+  .connection-box {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .logout-btn {
+    width: 100%;
+  }
+
+  .filter-summary,
+  .campaign-status {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .primary-btn,
+  .secondary-btn,
+  .send-btn,
+  .pause-btn,
+  .stop-btn {
+    width: 100%;
+  }
+
+  .select-all {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .workflow {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .workflow span {
+    text-align: center;
+  }
+
+  .workflow b {
+    text-align: center;
+    transform: rotate(90deg);
+  }
+}
+
+
+/* ================================
+   SMALL MOBILE
+================================ */
+
+@media (max-width: 450px) {
+
+  .whatsapp-page {
+    padding: 15px 10px;
+  }
+
+  .whatsapp-card {
+    padding: 15px;
+  }
+
+  .whatsapp-header h1 {
+    font-size: 23px;
+  }
+
+  .filter-summary,
+  .campaign-status {
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+
+  .filter-summary div,
+  .campaign-status div {
+    padding: 12px 8px;
+  }
+}
