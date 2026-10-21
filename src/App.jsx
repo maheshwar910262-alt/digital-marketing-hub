@@ -20,6 +20,9 @@ import GoogleTagManager from "./pages/GoogleTagManager";
 import CRO from "./pages/CRO";
 import CRM from "./pages/CRM";
 import Remarketing from "./pages/Remarketing";
+import InfluencerMarketing from "./pages/InfluencerMarketing";
+import GA4 from "./pages/GA4";
+import SEOAudit from "./pages/SEOAudit";
 import {
   Routes,
   Route,
@@ -290,7 +293,16 @@ const topics = [
     youtubeLink: "",
     visitLink: "/marketing-automation",
   },
-
+{
+  icon: "🔍",
+  title: "SEO Audit Tool",
+  description:
+    "Audit page titles, meta descriptions, headings, canonical tags and image alt attributes.",
+  pdfLink: "",
+  videoLink: "",
+  youtubeLink: "",
+  visitLink: "/seo-audit"
+},
   {
     icon: "💰",
     title: "Affiliate Marketing",
@@ -333,6 +345,16 @@ const topics = [
   videoLink: "",
   youtubeLink: "",
   visitLink: "/lead-excel-cleaner"
+},
+{
+  icon: "🤝",
+  title: "Influencer Marketing",
+  description:
+    "Learn creator research, brand collaborations, campaign planning and performance measurement.",
+  pdfLink: "",
+  videoLink: "",
+  youtubeLink: "",
+  visitLink: "/influencer-marketing"
 },
 {
   icon: "🔁",
@@ -676,14 +698,16 @@ function App() {
         path="/seo"
         element={<SEO />}
       />
+      <Route
+  path="/influencer-marketing"
+  element={<InfluencerMarketing />}
+/>
+<Route path="/ga4" element={<GA4 />} />
 <Route
   path="/google-tag-manager"
   element={<GoogleTagManager />}
-
-
-
-  
 />
+<Route path="/seo-audit" element={<SEOAudit />} />
 <Route path="/cro" element={<CRO />} />
       <Route
         path="/backlinks"
