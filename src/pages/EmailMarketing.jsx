@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import "./EmailMarketing.css";
-
+import EmailCleaner from "./EmailCleaner";
 const topics = [
   {
     number: "01",
@@ -357,7 +357,7 @@ function EmailMarketing() {
         <Link to="/" className="email-home">
           ← Home
         </Link>
-
+<EmailCleaner />
         <header className="email-hero">
           <div className="email-hero-content">
 

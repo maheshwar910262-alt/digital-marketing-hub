@@ -1,0 +1,232 @@
+.email-cleaner {
+  margin: 30px 0;
+  padding: 24px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  color: #1e293b;
+  font-family: Arial, sans-serif;
+}
+
+.cleaner-header {
+  margin-bottom: 22px;
+}
+
+.cleaner-header > span {
+  color: #2563eb;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.cleaner-header h2 {
+  margin: 10px 0;
+  color: #1e40af;
+  font-size: 25px;
+}
+
+.cleaner-header p,
+.cleaner-panel > p {
+  color: #64748b;
+  line-height: 1.6;
+}
+
+.cleaner-upload {
+  padding: 20px;
+  background: white;
+  border: 1px dashed #93c5fd;
+  border-radius: 9px;
+}
+
+.cleaner-upload label {
+  display: block;
+  margin-bottom: 12px;
+  font-weight: 700;
+}
+
+.cleaner-upload input {
+  max-width: 100%;
+}
+
+.cleaner-message {
+  overflow-wrap: anywhere;
+}
+
+.cleaner-stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  margin: 20px 0;
+}
+
+.cleaner-stats > div {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 18px 12px;
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 9px;
+  text-align: center;
+}
+
+.cleaner-stats strong {
+  color: #2563eb;
+  font-size: 26px;
+}
+
+.cleaner-stats span {
+  color: #64748b;
+  font-size: 13px;
+}
+
+.cleaner-actions {
+  margin-bottom: 20px;
+}
+
+.cleaner-columns {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: start;
+  gap: 18px;
+}
+
+.cleaner-panel {
+  min-width: 0;
+  padding: 18px;
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+}
+
+.cleaner-panel h3 {
+  margin-top: 0;
+  font-size: 18px;
+}
+
+.red-emails-panel {
+  border-top: 4px solid #dc2626;
+}
+
+.red-emails-panel h3 {
+  color: #dc2626;
+}
+
+.normal-emails-panel {
+  border-top: 4px solid #16a34a;
+}
+
+.normal-emails-panel h3 {
+  color: #15803d;
+}
+
+.cleaner-list {
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.cleaner-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 10px;
+  margin-bottom: 7px;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+}
+
+.red-emails-panel .cleaner-row {
+  background: #fff1f2;
+}
+
+.normal-emails-panel .cleaner-row {
+  background: #f0fdf4;
+}
+
+.cleaner-row span {
+  min-width: 0;
+  overflow-wrap: anywhere;
+  font-size: 13px;
+}
+
+.cleaner-panel button,
+.cleaner-actions button {
+  padding: 10px 14px;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  background: white;
+  color: #334155;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.cleaner-row button {
+  flex-shrink: 0;
+  padding: 6px 9px;
+  font-size: 12px;
+}
+
+.red-emails-panel .cleaner-row button {
+  color: #dc2626;
+}
+
+.cleaner-panel > button {
+  width: 100%;
+  margin-top: 14px;
+}
+
+.cleaner-panel .download-red {
+  background: #dc2626;
+  color: white;
+  border-color: #dc2626;
+}
+
+.cleaner-panel .download-clean {
+  background: #15803d;
+  color: white;
+  border-color: #15803d;
+}
+
+.cleaner-panel button:disabled,
+.cleaner-actions button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.cleaner-note {
+  margin-top: 20px;
+  color: #64748b;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+@media (max-width: 700px) {
+  .email-cleaner {
+    padding: 15px;
+  }
+
+  .cleaner-header h2 {
+    font-size: 21px;
+  }
+
+  .cleaner-columns {
+    grid-template-columns: 1fr;
+  }
+
+  .cleaner-stats {
+    gap: 8px;
+  }
+
+  .cleaner-stats > div {
+    padding: 13px 6px;
+  }
+
+  .cleaner-stats strong {
+    font-size: 22px;
+  }
+
+  .cleaner-stats span {
+    font-size: 11px;
+  }
+}
