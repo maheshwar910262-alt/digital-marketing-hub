@@ -17,6 +17,7 @@ import EmailMarketing from "./pages/EmailMarketing";
 import heroImage from "./assets/homepage.png";
 import WhatsAppMarketing from "./pages/WhatsAppMarketing";
 import GoogleTagManager from "./pages/GoogleTagManager";
+import CRO from "./pages/CRO";
 import {
   Routes,
   Route,
@@ -127,7 +128,16 @@ const topics = [
     youtubeLink: "https://www.youtube.com/@OpenAI",
     visitLink: "/ai-tools",
   },
-
+{
+  icon: "📈",
+  title: "Conversion Rate Optimization",
+  description:
+    "Learn landing page optimization, A/B testing, forms, CTAs and conversion tracking.",
+  pdfLink: "",
+  videoLink: "",
+  youtubeLink: "",
+  visitLink: "/cro"
+},
   {
     icon: "🎬",
     title: "YouTube Marketing",
@@ -649,6 +659,7 @@ function App() {
   path="/google-tag-manager"
   element={<GoogleTagManager />}
 />
+<Route path="/cro" element={<CRO />} />
       <Route
         path="/backlinks"
         element={<Backlinks />}
