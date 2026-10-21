@@ -1,0 +1,267 @@
+.gtm-page {
+  min-height: 100vh;
+  padding: 28px 20px;
+  background: #f8fafc;
+  color: #1e293b;
+  font-family: Arial, sans-serif;
+}
+
+.gtm-container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.gtm-home {
+  display: inline-block;
+  margin-bottom: 20px;
+  padding: 9px 14px;
+  border: 1px solid #bfdbfe;
+  border-radius: 6px;
+  background: #eff6ff;
+  color: #2563eb;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.gtm-hero {
+  padding: 42px 30px;
+  margin-bottom: 28px;
+  background: #fff;
+  border: 1px solid #dbeafe;
+  border-left: 5px solid #2563eb;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.gtm-hero > span,
+.gtm-intro > span,
+.gtm-project > span,
+.gtm-tools > span {
+  color: #2563eb;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.gtm-hero h1 {
+  margin: 12px 0;
+  color: #1d4ed8;
+  font-size: 36px;
+}
+
+.gtm-hero p,
+.gtm-intro p,
+.gtm-project > p {
+  color: #64748b;
+  line-height: 1.8;
+}
+
+.gtm-flow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 25px;
+}
+
+.gtm-flow span {
+  padding: 10px 16px;
+  border: 1px solid #bfdbfe;
+  border-radius: 7px;
+  background: #eff6ff;
+  color: #1d4ed8;
+  font-weight: 600;
+}
+
+.gtm-flow b {
+  color: #94a3b8;
+}
+
+.gtm-intro {
+  padding: 24px;
+  margin-bottom: 22px;
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+}
+
+.gtm-intro h2,
+.gtm-project h2,
+.gtm-tools h2 {
+  margin: 10px 0;
+  color: #1e40af;
+}
+
+.gtm-topics {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.gtm-card {
+  display: flex;
+  gap: 15px;
+  padding: 22px;
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  box-shadow: 0 2px 7px rgb(15 23 42 / 4%);
+}
+
+.gtm-number {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 8px;
+  background: #eff6ff;
+  color: #2563eb;
+  font-weight: 700;
+}
+
+.gtm-card-content {
+  min-width: 0;
+}
+
+.gtm-card h3 {
+  margin: 5px 0 10px;
+  color: #1e40af;
+  font-size: 18px;
+}
+
+.gtm-card p,
+.gtm-card li {
+  color: #64748b;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.gtm-card ul {
+  padding-left: 20px;
+}
+
+.gtm-project,
+.gtm-tools {
+  padding: 28px;
+  margin-top: 25px;
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+}
+
+.gtm-project-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  margin: 22px 0;
+}
+
+.gtm-project-grid > div {
+  padding: 16px;
+  border: 1px solid #dbeafe;
+  border-radius: 8px;
+  background: #f8fbff;
+}
+
+.gtm-project-grid strong {
+  color: #2563eb;
+}
+
+.gtm-project-grid p {
+  color: #64748b;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.gtm-checklist {
+  padding-left: 20px;
+  color: #475569;
+  line-height: 2;
+}
+
+.gtm-resource-list {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 18px;
+}
+
+.gtm-resource-list a {
+  display: inline-block;
+  padding: 12px 15px;
+  border: 1px solid #bfdbfe;
+  border-radius: 7px;
+  background: #eff6ff;
+  color: #1d4ed8;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.gtm-resource-list a:hover {
+  background: #dbeafe;
+}
+
+.gtm-footer {
+  padding: 25px 0;
+  color: #64748b;
+  text-align: center;
+}
+
+@media (max-width: 700px) {
+  .gtm-page {
+    padding: 16px 12px;
+  }
+
+  .gtm-hero {
+    padding: 28px 16px;
+  }
+
+  .gtm-hero h1 {
+    font-size: 28px;
+  }
+
+  .gtm-topics {
+    grid-template-columns: 1fr;
+  }
+
+  .gtm-card {
+    padding: 17px;
+  }
+
+  .gtm-project,
+  .gtm-tools,
+  .gtm-intro {
+    padding: 20px 16px;
+  }
+
+  .gtm-project-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .gtm-flow {
+    gap: 8px;
+  }
+
+  .gtm-flow span {
+    padding: 8px 11px;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 400px) {
+  .gtm-project-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .gtm-card {
+    gap: 10px;
+  }
+
+  .gtm-number {
+    width: 35px;
+    height: 35px;
+  }
+}

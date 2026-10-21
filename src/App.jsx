@@ -16,6 +16,7 @@ import LocalSEO from "./pages/LocalSEO";
 import EmailMarketing from "./pages/EmailMarketing";
 import heroImage from "./assets/homepage.png";
 import WhatsAppMarketing from "./pages/WhatsAppMarketing";
+import GoogleTagManager from "./pages/GoogleTagManager";
 import {
   Routes,
   Route,
@@ -39,7 +40,16 @@ const topics = [
     youtubeLink: "",
     visitLink: "/seo",
   },
-
+{
+  icon: "🏷️",
+  title: "Google Tag Manager",
+  description:
+    "Learn tags, triggers, variables, GA4 event tracking and conversion tracking.",
+  pdfLink: "",
+  videoLink: "",
+  youtubeLink: "",
+  visitLink: "/google-tag-manager"
+},
   {
     icon: "🔗",
     title: "Backlinks",
@@ -635,7 +645,10 @@ function App() {
         path="/seo"
         element={<SEO />}
       />
-
+<Route
+  path="/google-tag-manager"
+  element={<GoogleTagManager />}
+/>
       <Route
         path="/backlinks"
         element={<Backlinks />}
