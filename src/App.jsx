@@ -19,6 +19,7 @@ import WhatsAppMarketing from "./pages/WhatsAppMarketing";
 import GoogleTagManager from "./pages/GoogleTagManager";
 import CRO from "./pages/CRO";
 import CRM from "./pages/CRM";
+import Remarketing from "./pages/Remarketing";
 import {
   Routes,
   Route,
@@ -333,7 +334,16 @@ const topics = [
   youtubeLink: "",
   visitLink: "/lead-excel-cleaner"
 },
-
+{
+  icon: "🔁",
+  title: "Remarketing & Retargeting",
+  description:
+    "Learn audience targeting, Meta Pixel, Google Ads remarketing and conversion tracking.",
+  pdfLink: "",
+  videoLink: "",
+  youtubeLink: "",
+  visitLink: "/remarketing"
+},
 ];
 
 
@@ -669,6 +679,10 @@ function App() {
 <Route
   path="/google-tag-manager"
   element={<GoogleTagManager />}
+
+
+
+  
 />
 <Route path="/cro" element={<CRO />} />
       <Route
@@ -693,6 +707,7 @@ function App() {
         path="/lead-generation"
         element={<LeadGeneration />}
       />
+      <Route path="/remarketing" element={<Remarketing />} />
 <Route
   path="/technical-seo"
   element={<TechnicalSEO />}
