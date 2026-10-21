@@ -18,6 +18,7 @@ import heroImage from "./assets/homepage.png";
 import WhatsAppMarketing from "./pages/WhatsAppMarketing";
 import GoogleTagManager from "./pages/GoogleTagManager";
 import CRO from "./pages/CRO";
+import CRM from "./pages/CRM";
 import {
   Routes,
   Route,
@@ -137,6 +138,16 @@ const topics = [
   videoLink: "",
   youtubeLink: "",
   visitLink: "/cro"
+},
+{
+  icon: "👥",
+  title: "CRM & Customer Management",
+  description:
+    "Learn customer data management, lead tracking, sales pipelines and CRM automation.",
+  pdfLink: "",
+  videoLink: "",
+  youtubeLink: "",
+  visitLink: "/crm"
 },
   {
     icon: "🎬",
@@ -672,7 +683,7 @@ function App() {
         path="/social-media"
         element={<SocialMedia />}
       />
-
+<Route path="/crm" element={<CRM />} />
       <Route
         path="/ai-tools"
         element={<AITools />}
