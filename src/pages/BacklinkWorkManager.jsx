@@ -327,6 +327,8 @@ const initialSites = [
   { name: "Drigz", url: "https://drigz.com/" },
   { name: "World Web Directory", url: "https://worldweb-directory.com/" },
   { name: "7 Stars Directory", url: "https://www.7starsdirectory.com/" },
+    { name: "Boioiong", url: "https://www.boioiong.com/" },
+  { name: "Best Free Websites", url: "https://www.bestfreewebsites.net/" },
 ];
 
 const STORAGE_KEY = "backlinkWorkManager_v1";
