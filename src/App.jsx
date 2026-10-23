@@ -367,6 +367,17 @@ const topics = [
   youtubeLink: "",
   visitLink: "/remarketing"
 },
+
+{
+  icon: "🔗",
+  title: "Backlink Work Manager",
+  description: "Manage backlinks, track completed websites and export links to Excel.",
+  pdfLink: "",
+  videoLink: "",
+  youtubeLink: "",
+  visitLink: "/backlink-work-manager"
+},
+
 ];
 
 
