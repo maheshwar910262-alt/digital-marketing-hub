@@ -23,6 +23,7 @@ import Remarketing from "./pages/Remarketing";
 import InfluencerMarketing from "./pages/InfluencerMarketing";
 import GA4 from "./pages/GA4";
 import SEOAudit from "./pages/SEOAudit";
+import BacklinkWorkManager from "./pages/BacklinkWorkManager";
 import {
   Routes,
   Route,
@@ -721,6 +722,10 @@ function App() {
         path="/social-media"
         element={<SocialMedia />}
       />
+      <Route
+  path="/backlink-work-manager"
+  element={<BacklinkWorkManager />}
+/>
 <Route path="/crm" element={<CRM />} />
       <Route
         path="/ai-tools"
