@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-import BackendTest from "./BackendTest";
+// import BackendTest from "./BackendTest";
 import TopicCard from "./components/TopicCard";
 
 import Backlinks from "./pages/Backlinks";
