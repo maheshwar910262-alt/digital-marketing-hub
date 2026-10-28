@@ -714,7 +714,7 @@ function App() {
   path="/influencer-marketing"
   element={<InfluencerMarketing />}
 />
-<Route path="/backend-test" element={<BackendTest />} />
+{/* <Route path="/backend-test" element={<BackendTest />} /> */}
 <Route path="/ga4" element={<GA4 />} />
 <Route
   path="/google-tag-manager"
