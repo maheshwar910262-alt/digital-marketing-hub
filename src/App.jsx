@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-
+import BackendTest from "./BackendTest";
 import TopicCard from "./components/TopicCard";
 
 import Backlinks from "./pages/Backlinks";
@@ -714,6 +714,7 @@ function App() {
   path="/influencer-marketing"
   element={<InfluencerMarketing />}
 />
+<Route path="/backend-test" element={<BackendTest />} />
 <Route path="/ga4" element={<GA4 />} />
 <Route
   path="/google-tag-manager"

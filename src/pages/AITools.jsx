@@ -1,374 +1,160 @@
+import React, { useCallback, useEffect, useMemo, useState } from "react";
 import "./AITools.css";
 
-const aiTools = [
-  {
-    icon: "🤖",
-    title: "ChatGPT",
-    category: "AI Assistant",
-    description:
-      "AI assistant for writing, research, coding, learning, analysis, brainstorming and productivity.",
-    link: "https://chatgpt.com/",
-    pdfLink: "",
-    videoLink: "",
-    youtubeLink: "https://www.youtube.com/@OpenAI",
-  },
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || "http://127.0.0.1:5000";
+const TOKEN_KEY = "aiToolsAdminToken";
 
-  {
-    icon: "✨",
-    title: "Google Gemini",
-    category: "AI Assistant",
-    description:
-      "Google AI assistant for research, writing, learning, image generation, analysis and everyday productivity.",
-    link: "https://gemini.google.com/",
-    pdfLink: "",
-    videoLink: "",
-    youtubeLink: "",
-  },
-
-  {
-    icon: "🔎",
-    title: "Perplexity",
-    category: "AI Research",
-    description:
-      "AI research and answer engine that searches the web and provides answers with citations.",
-    link: "https://www.perplexity.ai/",
-    pdfLink: "",
-    videoLink: "",
-    youtubeLink: "",
-  },
-
-  {
-    icon: "🧠",
-    title: "Claude",
-    category: "AI Assistant",
-    description:
-      "AI assistant useful for writing, analysis, coding, documents and complex problem solving.",
-    link: "https://claude.ai/",
-    pdfLink: "",
-    videoLink: "",
-    youtubeLink: "",
-  },
-
-  {
-    icon: "🎨",
-    title: "Canva AI",
-    category: "AI Design",
-    description:
-      "AI-powered design tools for social media posts, presentations, graphics, marketing content and visual creation.",
-    link: "https://www.canva.com/ai/",
-    pdfLink: "",
-    videoLink: "",
-    youtubeLink: "",
-  },
-
-  {
-    icon: "🎨",
-    title: "Ideogram",
-    category: "AI Image",
-    description:
-      "AI image generation platform for creating creative visuals, graphics, posters and text-based designs.",
-    link: "https://ideogram.ai/login",
-    pdfLink: "",
-    videoLink: "",
-    youtubeLink: "https://www.youtube.com/@ideogram_ai",
-  },
-
-  {
-    icon: "🎙️",
-    title: "Voicebox",
-    category: "AI Voice",
-    description:
-      "Open-source local AI voice studio for voice cloning, text-to-speech and voice-powered applications.",
-    link: "https://voicebox.sh/",
-    pdfLink: "",
-    videoLink: "",
-    youtubeLink: "",
-  },
-
-  {
-    icon: "🗣️",
-    title: "Lovevoice AI",
-    category: "AI Voice",
-    description:
-      "AI text-to-speech platform for converting written text into natural-sounding voice audio.",
-    link: "https://lovevoice.ai/",
-    pdfLink: "",
-    videoLink: "",
-    youtubeLink: "",
-  },
-
-  {
-    icon: "📚",
-    title: "Gemini Notebook",
-    category: "AI Research",
-    description:
-      "AI-powered research and learning assistant for working with documents, notes, sources and research material.",
-    link: "https://workspace.google.com/intl/en_in/products/gemini-notebook/",
-    pdfLink: "",
-    videoLink: "",
-    youtubeLink: "",
-  },
-
-  {
-    icon: "🗺️",
-    title: "SEO Roadmap",
-    category: "SEO Learning",
-    description:
-      "Structured SEO learning roadmap covering important SEO concepts and skills step by step.",
-    link: "https://roadmap.sh/seo",
-    pdfLink: "",
-    videoLink: "",
-    youtubeLink: "https://www.youtube.com/@roadmapsh",
-  },
-
-  {
-    icon: "📍",
-    title: "GMB Everywhere",
-    category: "Local SEO",
-    description:
-      "Tool for researching Google Business Profiles and analyzing local search and Google Maps results.",
-    link: "https://www.gmbeverywhere.com/",
-    pdfLink: "",
-    videoLink: "",
-    youtubeLink: "",
-  },
-
-  {
-    icon: "🦅",
-    title: "Local Falcon",
-    category: "Local SEO",
-    description:
-      "Local SEO tool for tracking Google Maps and local search visibility across locations.",
-    link: "https://www.localfalcon.com/",
-    pdfLink: "",
-    videoLink: "",
-    youtubeLink: "",
-  },
-
-  {
-    icon: "🔍",
-    title: "SEO Minion",
-    category: "SEO Tool",
-    description:
-      "Chrome extension for on-page SEO analysis, broken links, SERP preview and other SEO tasks.",
-    link: "https://chromewebstore.google.com/detail/seo-minion/giihipjfimkajhlcilipnjeohabimjhi",
-    pdfLink: "",
-    videoLink: "",
-    youtubeLink: "",
-  },
-
-  {
-    icon: "🧭",
-    title: "MozBar",
-    category: "SEO Tool",
-    description:
-      "SEO toolbar for Chrome and Firefox providing useful SEO metrics and page-level information.",
-    link: "https://moz.com/products/pro/seo-toolbar",
-    pdfLink: "",
-    videoLink: "",
-    youtubeLink: "",
-  },
-
-  {
-    icon: "💻",
-    title: "GitHub Copilot",
-    category: "AI Coding",
-    description:
-      "AI coding assistant that helps developers write, understand and work with code.",
-    link: "https://github.com/features/copilot",
-    pdfLink: "",
-    videoLink: "",
-    youtubeLink: "",
-  },
-
-  {
-    icon: "🎬",
-    title: "Runway",
-    category: "AI Video",
-    description:
-      "AI creative platform for generating and editing video and other visual content.",
-    link: "https://runwayml.com/",
-    pdfLink: "",
-    videoLink: "",
-    youtubeLink: "",
-  },
-];
-
-function AITools() {
-  return (
-    <div className="ai-page">
-
-      {/* HEADER */}
-      <header className="ai-header">
-        <span className="ai-label">DIGITAL MARKETING • AI</span>
-
-        <h1>🤖 AI Tools</h1>
-
-        <p>
-          Learn and explore AI tools for content, SEO, design, research,
-          voice, video, coding and digital marketing.
-        </p>
-      </header>
-
-      <main className="ai-container">
-
-        {/* INTRO */}
-        <section className="ai-intro">
-          <span>AI TOOL COLLECTION</span>
-
-          <h2>Important AI Tools for Digital Marketing</h2>
-
-          <p>
-            Use these tools to learn, research, create content, analyze data,
-            improve SEO and automate repetitive marketing tasks.
-          </p>
-        </section>
-
-        {/* CARDS */}
-        <section className="ai-grid">
-
-          {aiTools.map((tool) => (
-            <div className="ai-card" key={tool.title}>
-
-              <div className="ai-card-top">
-                <div className="ai-icon">
-                  {tool.icon}
-                </div>
-
-                <span className="ai-category">
-                  {tool.category}
-                </span>
-              </div>
-
-              <h3>{tool.title}</h3>
-
-              <p>{tool.description}</p>
-
-              <div className="ai-buttons">
-
-                {tool.pdfLink ? (
-                  <a
-                    href={tool.pdfLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="ai-btn pdf"
-                  >
-                    📄 PDF
-                  </a>
-                ) : (
-                  <button className="ai-btn pdf" disabled>
-                    📄 PDF
-                  </button>
-                )}
-
-                {tool.videoLink ? (
-                  <a
-                    href={tool.videoLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="ai-btn video"
-                  >
-                    ▶ Video
-                  </a>
-                ) : (
-                  <button className="ai-btn video" disabled>
-                    ▶ Video
-                  </button>
-                )}
-
-                {tool.youtubeLink ? (
-                  <a
-                    href={tool.youtubeLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="ai-btn youtube"
-                  >
-                    📺 YouTube
-                  </a>
-                ) : (
-                  <button className="ai-btn youtube" disabled>
-                    📺 YouTube
-                  </button>
-                )}
-
-                <a
-                  href={tool.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="ai-btn visit"
-                >
-                  🔗 Visit
-                </a>
-
-              </div>
-
-            </div>
-          ))}
-
-        </section>
-
-        {/* IMPORTANT SECTION */}
-        <section className="important-ai">
-
-          <div className="important-heading">
-            <span>IMPORTANT</span>
-
-            <h2>⚠️ AI Tools Use Carefully</h2>
-
-            <p>
-              AI tools can save time, but important business, SEO and
-              technical decisions should be checked before publishing or
-              implementing them.
-            </p>
-          </div>
-
-          <div className="important-grid">
-
-            <div>
-              <strong>🔎 Verify Information</strong>
-              <p>
-                Check important facts, statistics, links and claims before
-                publishing AI-generated content.
-              </p>
-            </div>
-
-            <div>
-              <strong>✍️ Edit AI Content</strong>
-              <p>
-                Do not publish raw AI output blindly. Review, improve and add
-                useful original information.
-              </p>
-            </div>
-
-            <div>
-              <strong>🔐 Protect Data</strong>
-              <p>
-                Do not paste passwords, private customer information or
-                confidential business data into AI tools.
-              </p>
-            </div>
-
-            <div>
-              <strong>📊 Measure Results</strong>
-              <p>
-                For marketing work, check actual traffic, engagement, leads
-                and conversions instead of relying only on AI suggestions.
-              </p>
-            </div>
-
-          </div>
-
-        </section>
-
-      </main>
-
-      <footer className="ai-footer">
-        <strong>🤖 AI Tools Learning Hub</strong>
-        <p>Learn • Practice • Create • Verify • Improve</p>
-      </footer>
-
-    </div>
-  );
+async function readJson(response) {
+  const data = await response.json().catch(() => ({}));
+  if (!response.ok) throw new Error(data.error || `Request failed (${response.status})`);
+  return data;
 }
 
-export default AITools;
+export default function AITools() {
+  const [tools, setTools] = useState([]);
+  const [query, setQuery] = useState("");
+  const [token, setToken] = useState(() => sessionStorage.getItem(TOKEN_KEY) || "");
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [isAdmin, setIsAdmin] = useState(() => Boolean(sessionStorage.getItem(TOKEN_KEY)));
+  const [loading, setLoading] = useState(true);
+  const [saving, setSaving] = useState(false);
+  const [message, setMessage] = useState("");
+  const [editingId, setEditingId] = useState(null);
+  const [form, setForm] = useState({ name: "", url: "", category: "General", description: "" });
+
+  const authHeaders = useMemo(() => token ? { Authorization: `Bearer ${token}` } : {}, [token]);
+
+  const loadTools = useCallback(async (search = "") => {
+    setLoading(true);
+    try {
+      const params = new URLSearchParams();
+      if (search.trim()) params.set("q", search.trim());
+      const suffix = params.toString() ? `?${params.toString()}` : "";
+      const data = await readJson(await fetch(`${API_BASE_URL}/api/ai-tools${suffix}`));
+      setTools(Array.isArray(data) ? data : []);
+    } catch (error) {
+      setMessage(error.message || "Could not load AI tools. Check that Flask is running.");
+    } finally {
+      setLoading(false);
+    }
+  }, []);
+
+  useEffect(() => { loadTools(""); }, [loadTools]);
+
+  const login = async (event) => {
+    event.preventDefault();
+    setMessage("");
+    try {
+      const data = await readJson(await fetch(`${API_BASE_URL}/api/ai-tools/login`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ username, password }),
+      }));
+      sessionStorage.setItem(TOKEN_KEY, data.token);
+      setToken(data.token);
+      setIsAdmin(true);
+      setPassword("");
+      setMessage("Admin login successful. You can now manage AI tools.");
+    } catch (error) {
+      setMessage(error.message || "Admin login failed.");
+    }
+  };
+
+  const logout = () => {
+    sessionStorage.removeItem(TOKEN_KEY);
+    setToken("");
+    setIsAdmin(false);
+    setEditingId(null);
+    setForm({ name: "", url: "", category: "General", description: "" });
+    setMessage("Logged out.");
+  };
+
+  const saveTool = async (event) => {
+    event.preventDefault();
+    if (!token) { setMessage("Please log in as admin first."); return; }
+    setSaving(true);
+    setMessage("");
+    try {
+      const editing = editingId !== null;
+      const response = await fetch(`${API_BASE_URL}/api/ai-tools${editing ? `/${editingId}` : ""}`, {
+        method: editing ? "PUT" : "POST",
+        headers: { "Content-Type": "application/json", ...authHeaders },
+        body: JSON.stringify(form),
+      });
+      const data = await readJson(response);
+      setMessage(editing ? "AI tool updated." : "AI tool added.");
+      setForm({ name: "", url: "", category: "General", description: "" });
+      setEditingId(null);
+      await loadTools(query);
+    } catch (error) {
+      if (/expired|invalid admin session/i.test(error.message)) logout();
+      setMessage(error.message || "Could not save AI tool.");
+    } finally {
+      setSaving(false);
+    }
+  };
+
+  const startEdit = (tool) => {
+    setEditingId(tool.id);
+    setForm({ name: tool.name, url: tool.url, category: tool.category || "General", description: tool.description || "" });
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  const deleteTool = async (tool) => {
+    if (!window.confirm(`Delete "${tool.name}"? This cannot be undone.`)) return;
+    try {
+      await readJson(await fetch(`${API_BASE_URL}/api/ai-tools/${tool.id}`, { method: "DELETE", headers: authHeaders }));
+      setMessage("AI tool deleted.");
+      await loadTools(query);
+    } catch (error) {
+      if (/expired|invalid admin session/i.test(error.message)) logout();
+      setMessage(error.message || "Could not delete AI tool.");
+    }
+  };
+
+  const change = (event) => setForm((current) => ({ ...current, [event.target.name]: event.target.value }));
+
+  return (
+    <main className="ai-tools-page">
+      <header className="ai-tools-heading">
+        <div><p className="ai-tools-eyebrow">DIGITAL MARKETING COMMAND CENTER</p><h1>AI Tools</h1><p>Discover and manage your team's AI resources.</p></div>
+        <span className="ai-tools-count">{tools.length} tools</span>
+      </header>
+
+      {message && <div className="ai-tools-message" role="status">{message}</div>}
+
+      {!isAdmin ? (
+        <details className="ai-tools-admin-login">
+          <summary>Office Admin Login</summary>
+          <form onSubmit={login} className="ai-tools-form ai-tools-login-form">
+            <label>Admin username<input autoComplete="username" value={username} onChange={(e) => setUsername(e.target.value)} required /></label>
+            <label>Admin password<input type="password" autoComplete="current-password" value={password} onChange={(e) => setPassword(e.target.value)} required /></label>
+            <button type="submit">Login to Manage Tools</button>
+          </form>
+          <p className="ai-tools-hint">Only credentials configured on the Flask server can sign in.</p>
+        </details>
+      ) : (
+        <section className="ai-tools-admin-panel">
+          <div className="ai-tools-panel-top"><h2>{editingId ? "Edit AI Tool" : "Add an AI Tool"}</h2><button type="button" className="ai-tools-secondary" onClick={logout}>Logout</button></div>
+          <form onSubmit={saveTool} className="ai-tools-form">
+            <div className="ai-tools-form-grid">
+              <label>Tool name<input name="name" value={form.name} onChange={change} maxLength={120} required placeholder="e.g. ChatGPT" /></label>
+              <label>Website URL<input name="url" type="url" value={form.url} onChange={change} maxLength={2048} required placeholder="https://example.com" /></label>
+              <label>Category<input name="category" value={form.category} onChange={change} maxLength={80} placeholder="Writing, SEO, Images..." /></label>
+              <label className="ai-tools-description-field">Description<textarea name="description" value={form.description} onChange={change} maxLength={1000} rows={3} placeholder="What is this tool useful for?" /></label>
+            </div>
+            <div className="ai-tools-actions"><button type="submit" disabled={saving}>{saving ? "Saving..." : editingId ? "Update Tool" : "Add Tool"}</button>{editingId && <button type="button" className="ai-tools-secondary" onClick={() => { setEditingId(null); setForm({ name: "", url: "", category: "General", description: "" }); }}>Cancel Edit</button>}</div>
+          </form>
+        </section>
+      )}
+
+      <section className="ai-tools-list-section">
+        <div className="ai-tools-list-heading"><div><h2>Available Tools</h2><p>Search by name, category, URL, or description.</p></div><form className="ai-tools-search" onSubmit={(e) => { e.preventDefault(); loadTools(query); }}><input aria-label="Search AI tools" value={query} onChange={(e) => setQuery(e.target.value)} placeholder="Search AI tools..." /><button type="submit">Search</button></form></div>
+        {loading ? <p>Loading AI tools...</p> : tools.length === 0 ? <div className="ai-tools-empty">No AI tools found. {isAdmin ? "Add your first tool above." : "Office admin can add tools after login."}</div> : (
+          <div className="ai-tools-grid">{tools.map((tool) => <article className="ai-tool-card" key={tool.id}><div className="ai-tool-card-top"><span className="ai-tool-category">{tool.category || "General"}</span>{isAdmin && <div className="ai-tool-admin-actions"><button type="button" className="ai-tools-small-secondary" onClick={() => startEdit(tool)}>Edit</button><button type="button" className="ai-tools-small-danger" onClick={() => deleteTool(tool)}>Delete</button></div>}</div><h3>{tool.name}</h3><p>{tool.description || "No description added yet."}</p><a href={tool.url} target="_blank" rel="noopener noreferrer">Open website ↗</a></article>)}</div>
+        )}
+      </section>
+    </main>
+  );
+}
