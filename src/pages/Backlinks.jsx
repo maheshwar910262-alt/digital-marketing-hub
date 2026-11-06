@@ -90,6 +90,15 @@ function Backlinks() {
   });
 
   const [savedSites, setSavedSites] = useState([]);
+  // Public backlink submission
+const [publicSiteName, setPublicSiteName] = useState("");
+const [publicSiteUrl, setPublicSiteUrl] = useState("");
+const [submitMessage, setSubmitMessage] = useState("");
+const [submitLoading, setSubmitLoading] = useState(false);
+
+// Admin pending submissions
+const [pendingSubmissions, setPendingSubmissions] = useState([]);
+const [pendingLoading, setPendingLoading] = useState(false);
   const [siteName, setSiteName] = useState("");
   const [siteUrl, setSiteUrl] = useState("");
   const [loadingSites, setLoadingSites] = useState(true);
@@ -146,7 +155,88 @@ function Backlinks() {
       setLoginLoading(false);
     }
   };
+const submitPublicBacklink = async (event) => {
+  event.preventDefault();
 
+  const name = publicSiteName.trim();
+  let url = publicSiteUrl.trim();
+
+  if (!name || !url) {
+    setSubmitMessage("Please enter website name and URL.");
+    return;
+  }
+
+  if (!/^https?:\/\//i.test(url)) {
+    url = `https://${url}`;
+  }
+
+  try {
+    new URL(url);
+  } catch {
+    setSubmitMessage("Please enter a valid website URL.");
+    return;
+  }
+
+  setSubmitLoading(true);
+  setSubmitMessage("");
+
+  try {
+    const response = await fetch(
+      `${API_BASE_URL}/api/backlink-submissions`,
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, url }),
+      }
+    );
+
+    const result = await response.json();
+
+    if (!response.ok) {
+      throw new Error(result.error || "Submission failed.");
+    }
+
+    setPublicSiteName("");
+    setPublicSiteUrl("");
+    setSubmitMessage(
+      result.message ||
+        "Submitted successfully. Your backlink will be reviewed within 24 hours."
+    );
+  } catch (error) {
+    setSubmitMessage(error.message || "Backend connection failed.");
+  } finally {
+    setSubmitLoading(false);
+  }
+};
+const loadPendingSubmissions = async () => {
+  if (!token) return;
+
+  setPendingLoading(true);
+
+  try {
+    const response = await fetch(
+      `${API_BASE_URL}/api/backlink-submissions`,
+      {
+        method: "GET",
+        headers: authHeaders(),
+      }
+    );
+
+    const data = await response.json();
+
+    if (!response.ok) {
+      if (response.status === 401) logout();
+      throw new Error(data.error || "Pending submissions load failed.");
+    }
+
+    setPendingSubmissions(Array.isArray(data) ? data : []);
+  } catch (error) {
+    console.error(error);
+    alert(error.message);
+  } finally {
+    setPendingLoading(false);
+  }
+};
   const loadSites = async () => {
     setLoadingSites(true);
 
@@ -173,7 +263,13 @@ function Backlinks() {
   useEffect(() => {
     loadSites();
   }, []);
-
+useEffect(() => {
+  if (token) {
+    loadPendingSubmissions();
+  } else {
+    setPendingSubmissions([]);
+  }
+}, [token]);
   useEffect(() => {
     let active = true;
 
@@ -440,7 +536,54 @@ function Backlinks() {
 
       <section className="backlink-info">
         <h2>Office Admin Login</h2>
+{token && (
+  <section className="backlink-info">
+    <h2>Pending Backlink Submissions</h2>
 
+    <button
+      type="button"
+      onClick={loadPendingSubmissions}
+      disabled={pendingLoading}
+    >
+      {pendingLoading ? "Loading..." : "Refresh Pending"}
+    </button>
+
+    {pendingSubmissions.length === 0 ? (
+      <p>No pending submissions found.</p>
+    ) : (
+      <div className="backlink-list">
+        {pendingSubmissions.map((item) => (
+          <div className="backlink-card" key={item.id}>
+            <div className="site-info">
+              <h3>{item.name}</h3>
+              <p>{item.url}</p>
+              <small>Status: {item.status}</small>
+            </div>
+
+            <div className="site-actions">
+              <button
+                type="button"
+                onClick={() => reviewSubmission(item.id, "approve")}
+                className="done-btn"
+              >
+                ✓ Approve
+              </button>
+
+              <button
+                type="button"
+                onClick={() => reviewSubmission(item.id, "reject")}
+                className="done-btn"
+                style={{ background: "#b42318" }}
+              >
+                ✕ Reject
+              </button>
+            </div>
+          </div>
+        ))}
+      </div>
+    )}
+  </section>
+)}
         {token ? (
           <div>
             <p>Office Admin logged in. You can manage backlinks.</p>
@@ -487,6 +630,46 @@ function Backlinks() {
       </section>
 
       <section className="backlink-info">
+        <section className="backlink-info">
+  <h2>Submit Your Website for Backlink Listing</h2>
+
+  <form
+    onSubmit={submitPublicBacklink}
+    style={{
+      display: "grid",
+      gap: "10px",
+      maxWidth: "650px",
+    }}
+  >
+    <input
+      type="text"
+      value={publicSiteName}
+      onChange={(event) => setPublicSiteName(event.target.value)}
+      placeholder="Website Name"
+      required
+    />
+
+    <input
+      type="text"
+      value={publicSiteUrl}
+      onChange={(event) => setPublicSiteUrl(event.target.value)}
+      placeholder="Website URL"
+      required
+    />
+
+    <button type="submit" disabled={submitLoading}>
+      {submitLoading ? "Submitting..." : "Submit Website"}
+    </button>
+  </form>
+
+  {submitMessage && (
+    <p role="status">{submitMessage}</p>
+  )}
+
+  <p>
+    Your backlink will be reviewed by the admin within 24 hours.
+  </p>
+</section>
         <h2>Backlink Submission Websites</h2>
         <p>
           Open the website, complete your backlink submission and click Done.

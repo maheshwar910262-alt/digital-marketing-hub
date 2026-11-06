@@ -5,7 +5,7 @@ import SEO from "./pages/SEO";
 import SocialMedia from "./pages/SocialMedia";
 import AITools from "./pages/AITools";
 import LeadGeneration from "./pages/LeadGeneration";
-
+import BackendTest from "./BackendTest";
 import {
   Routes,
   Route,
@@ -648,7 +648,11 @@ function App() {
   path="/lead-generation"
   element={<LeadGeneration />}
 />
-      <Route
+    
+    <Route
+  path="/backend-test"
+  element={<BackendTest />}
+/>  <Route
         path="/youtube-marketing"
         element={
           <div style={{ padding: "50px" }}>
